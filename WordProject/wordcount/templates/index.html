@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WordCount</title>
+</head>
+<body>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Calculate" />
+            </form>
+    {% if word %}
+        Слово {{word}} встречается в файле {{file}} {{count}} раз.
+    {% endif %}
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                    <p><button name="action" value="delete">Clean data</button></p>
+            </form>
+</body>
+</html>
